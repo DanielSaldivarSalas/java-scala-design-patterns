@@ -23,5 +23,6 @@ public class CollectionPipeline {
                 .mapToInt(x -> x*2)
                 .sum();
         System.out.println(evenTotals);
+        //This is what we call functional composition
     }
 }
