@@ -18,10 +18,10 @@ public class CollectionPipeline {
 
         //find the total of double of even numbers
         //Here we will use a stream, which is an internal iterator
-        int wow = numbers.stream()
+        int evenTotals = numbers.stream()
                 .filter(e -> e % 2 == 0)
                 .mapToInt(x -> x*2)
                 .sum();
-        System.out.println(wow);
+        System.out.println(evenTotals);
     }
 }
