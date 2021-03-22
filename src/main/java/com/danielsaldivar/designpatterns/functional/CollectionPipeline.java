@@ -22,7 +22,31 @@ public class CollectionPipeline {
                 .filter(e -> e % 2 == 0)
                 .mapToInt(x -> x*2)
                 .sum();
-        System.out.println(evenTotals);
+        System.out.println("evenTotals = " + evenTotals);
         //This is what we call functional composition
+
+        //one of the biggest advantages is that the code starts to
+        //look like the problem statement
+
+
+        //But what is the alternative to this? Using imperative style
+        //which leads to accidental complexity, example below
+
+        int imperativeTotal = 0;
+        for (int x: numbers){
+            if (x % 2 == 0){
+                imperativeTotal += x * 2;
+            }
+        }
+        System.out.println("imperativeTotal = " + imperativeTotal);
+
+
+        /*
+        PERFORMANCE
+        Using this method, we'll be able to parallize the code
+        without having to synchronize and use locks all over the place
+
+        That is as long as your code is using pure functions
+         */
     }
 }
